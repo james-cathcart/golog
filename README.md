@@ -32,5 +32,5 @@ func main() {
 }
 ```
 
-## Including Inside Structs
+## Implementation Patterns
 TBD...
