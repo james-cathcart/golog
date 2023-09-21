@@ -22,7 +22,9 @@ func (l *Log) Info(message interface{}) {
 
 	if logLevel == Disabled {
 		return
-	} else if logLevel == InfoLevel {
+	}
+
+	if logLevel == InfoLevel {
 		nativeLogger.Printf("[ %s ] %s -> %v", levelMap[InfoLevel], l.logPrefix, message)
 	}
 }
@@ -32,7 +34,9 @@ func (l *Log) Infof(template string, args ...interface{}) {
 
 	if logLevel == Disabled {
 		return
-	} else if logLevel == InfoLevel {
+	}
+
+	if logLevel == InfoLevel {
 		message := fmt.Sprintf(template, args...)
 		nativeLogger.Printf("[ %s ] %s -> %v", levelMap[InfoLevel], l.logPrefix, message)
 	}
@@ -43,7 +47,9 @@ func (l *Log) Debug(message interface{}) {
 
 	if Disabled == logLevel {
 		return
-	} else if logLevel <= DebugLevel {
+	}
+
+	if logLevel <= DebugLevel {
 		nativeLogger.Printf("[ %s ] %s -> %v", levelMap[DebugLevel], l.logPrefix, message)
 	}
 }
@@ -53,7 +59,9 @@ func (l *Log) Debugf(template string, args ...interface{}) {
 
 	if Disabled == logLevel {
 		return
-	} else if logLevel <= DebugLevel {
+	}
+
+	if logLevel <= DebugLevel {
 		message := fmt.Sprintf(template, args...)
 		nativeLogger.Printf("[ %s ] %s -> %v", levelMap[DebugLevel], l.logPrefix, message)
 	}
@@ -64,7 +72,9 @@ func (l *Log) Warn(message interface{}) {
 
 	if Disabled == logLevel {
 		return
-	} else if logLevel <= WarnLevel {
+	}
+
+	if logLevel <= WarnLevel {
 		nativeLogger.Printf("[ %s ] %s -> %v", levelMap[WarnLevel], l.logPrefix, message)
 	}
 }
@@ -74,7 +84,9 @@ func (l *Log) Warnf(template string, args ...interface{}) {
 
 	if Disabled == logLevel {
 		return
-	} else if logLevel <= WarnLevel {
+	}
+
+	if logLevel <= WarnLevel {
 		message := fmt.Sprintf(template, args...)
 		nativeLogger.Printf("[ %s ] %s -> %v", levelMap[WarnLevel], l.logPrefix, message)
 	}
@@ -85,7 +97,9 @@ func (l *Log) Error(message interface{}) {
 
 	if Disabled == logLevel {
 		return
-	} else if logLevel <= ErrorLevel {
+	}
+
+	if logLevel <= ErrorLevel {
 		nativeLogger.Printf("[ %s ] %s -> %v", levelMap[ErrorLevel], l.logPrefix, message)
 	}
 }
@@ -95,7 +109,9 @@ func (l *Log) Errorf(template string, args ...interface{}) {
 
 	if Disabled == logLevel {
 		return
-	} else if logLevel <= ErrorLevel {
+	}
+
+	if logLevel <= ErrorLevel {
 		message := fmt.Sprintf(template, args...)
 		nativeLogger.Printf("[ %s ] %s -> %v", levelMap[ErrorLevel], l.logPrefix, message)
 	}
