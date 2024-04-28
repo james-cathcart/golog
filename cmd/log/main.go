@@ -8,14 +8,15 @@ func main() {
 
 	logPrefix := `main`
 
-	// Create a new logger instance
-	log := golog.NewLogger(logPrefix)
+	// Create a new AbstractLogger interface and inject the NativeLogger implementation
+	var nativeLogger golog.AbstractLogger = golog.NewNativeLogger(logPrefix)
+	log := golog.NewLogger(nativeLogger)
 
 	// Set logging level for application
 	golog.SetLoggingLevel(golog.DebugLevel)
 
-	log.Info("info message")
 	log.Debug("debug message")
+	log.Info("info message")
 	log.Warn("warn message")
 	log.Error("error message")
 

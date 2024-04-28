@@ -1,6 +1,6 @@
 package golog
 
-type Logger interface {
+type GoLogger interface {
 	// Info logs an info level message
 	Info(message interface{})
 	// Infof logs an info level message with arguments
@@ -17,4 +17,11 @@ type Logger interface {
 	Error(message interface{})
 	// Errorf logs an error level message with arguments
 	Errorf(template string, args ...interface{})
+}
+
+type AbstractLogger interface {
+	Info(message interface{})
+	Debug(message interface{})
+	Warn(message interface{})
+	Error(message interface{})
 }

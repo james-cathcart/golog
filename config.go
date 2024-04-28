@@ -4,12 +4,12 @@ package golog
 // some additional functionality
 
 const (
-	// InfoLevel provides general information. This is similar to a "verbose" flag and is the
+	// DebugLevel provides information that may be over sharing for typical users but also
+	// may be useful for developers.
+	DebugLevel = 1
+	// InfoLevel general information. This is similar to a "verbose" flag and is the
 	// most granular option
-	InfoLevel = 1
-	// DebugLevel provides information that may be useful for developers, but not relevant
-	// for the typical user.
-	DebugLevel = 2
+	InfoLevel = 2
 	// WarnLevel provides warnings on events that may not be critical failures, but are unexpected
 	// and potentially undesirable. This is usually the preferred level for production
 	WarnLevel = 3
@@ -23,8 +23,8 @@ const (
 var (
 	logLevel int
 	levelMap = map[int]string{
-		InfoLevel:  `Info`,
 		DebugLevel: `Debug`,
+		InfoLevel:  `Info`,
 		WarnLevel:  `Warn`,
 		ErrorLevel: `Error`,
 	}
