@@ -6,7 +6,6 @@ import (
 
 // Log is the instance of the logger
 type Log struct {
-	logPrefix string
 	logger    AbstractLogger
 }
 

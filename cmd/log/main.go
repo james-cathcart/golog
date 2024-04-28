@@ -6,10 +6,8 @@ import (
 
 func main() {
 
-	logPrefix := `main`
-
 	// Create a new AbstractLogger interface and inject the NativeLogger implementation
-	var nativeLogger golog.AbstractLogger = golog.NewNativeLogger(logPrefix)
+	var nativeLogger golog.AbstractLogger = golog.NewNativeLogger()
 	log := golog.NewLogger(nativeLogger)
 
 	// Set logging level for application
