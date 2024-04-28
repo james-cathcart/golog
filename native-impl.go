@@ -4,14 +4,10 @@ import (
 	nativeLogger "log"
 )
 
-type NativeLogger struct {
-	logPrefix string
-}
+type NativeLogger struct{}
 
-func NewNativeLogger(logPrefix string) AbstractLogger {
-	return &NativeLogger{
-		logPrefix: logPrefix,
-	}
+func NewNativeLogger() AbstractLogger {
+	return &NativeLogger{}
 }
 
 // Info log info level message
